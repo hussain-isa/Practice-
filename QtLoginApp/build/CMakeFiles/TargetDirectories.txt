@@ -1,0 +1,4 @@
+/home/programming/Desktop/LABS/QtLoginApp/build/CMakeFiles/QtLoginApp.dir
+/home/programming/Desktop/LABS/QtLoginApp/build/CMakeFiles/edit_cache.dir
+/home/programming/Desktop/LABS/QtLoginApp/build/CMakeFiles/rebuild_cache.dir
+/home/programming/Desktop/LABS/QtLoginApp/build/CMakeFiles/QtLoginApp_autogen.dir
