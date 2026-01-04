@@ -11,7 +11,9 @@ int main()
 
     cout << "Enter the subject: ";
     cin >> subject;
-
+    
+    cout << "Enter the Number of subjects: ";
+    cin >> numSubjects;
 
     cout << "Enter the number of credits (1-4): ";
     cin >> credits;
