@@ -5,13 +5,13 @@ int main()
 {
     float cgpa;
     string grade;
-    char subject;
+    string subject;
     int numSubjects, credits;
 
 
     cout << "Enter the subject: ";
     cin >> subject;
-    
+
     cout << "Enter the Number of subjects: ";
     cin >> numSubjects;
 
