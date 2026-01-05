@@ -1,23 +1,18 @@
-import json
 import subprocess
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
-import os
 
 @csrf_exempt
 def cast_vote(request):
-    data = json.loads(request.body)
-    choice = data.get("vote", 0)
+    candidate_id = request.POST.get("candidate_id")
 
-    cpp_executable = os.path.join(os.path.dirname(os.path.dirname(__file__)), "../cpp/vote")
+    cpp_executable = "/home/programming/Desktop/LABS/tutorials/votingsystem/cpp/vote"
 
     result = subprocess.run(
         [cpp_executable],
-        input=str(choice),
+        input=str(candidate_id),
         text=True,
         capture_output=True
     )
 
     return JsonResponse({"message": result.stdout.strip()})
-
-

@@ -3,20 +3,20 @@
 <body>
 <h2>Voting System</h2>
 
-<button onclick="vote(1)">Candidate A</button>
-<button onclick="vote(2)">Candidate B</button>
-<button onclick="vote(3)">Candidate C</button>
+<button onclick="castVote(1)">Vote Candidate 1</button>
+<button onclick="castVote(2)">Vote Candidate 2</button>
 
 <script>
-function vote(choice) {
-  fetch("http://127.0.0.1:8000/api/vote/", {
-    method: "POST",
-    headers: {"Content-Type": "application/json"},
-    body: JSON.stringify({ vote: choice })
-  })
-  .then(res => res.json())
-  .then(data => alert(data.message));
+function castVote(id) {
+    fetch("http://127.0.0.1:8000/api/vote/", {
+        method: "POST",
+        body: new URLSearchParams({ candidate_id: id })
+    })
+    .then(res => res.json())
+    .then(data => alert(data.message));
+  
 }
 </script>
 </body>
 </html>
+
