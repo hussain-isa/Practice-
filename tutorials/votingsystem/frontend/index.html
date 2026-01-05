@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h2>Voting System</h2>
+
+<button onclick="vote(1)">Candidate A</button>
+<button onclick="vote(2)">Candidate B</button>
+<button onclick="vote(3)">Candidate C</button>
+
+<script>
+function vote(choice) {
+  fetch("http://127.0.0.1:8000/api/vote/", {
+    method: "POST",
+    headers: {"Content-Type": "application/json"},
+    body: JSON.stringify({ vote: choice })
+  })
+  .then(res => res.json())
+  .then(data => alert(data.message));
+}
+</script>
+</body>
+</html>
